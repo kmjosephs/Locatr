@@ -7,24 +7,21 @@ block content
     .row
       .col-lg-6
         h1= pageHeader.title
-          small &nbsp;#{pageHeader.strapline}
+        small &nbsp;#{pageHeader.strapline}
   .row
-    each location in locations
-      .col-xs-12.col-sm-8
-        .row.list-group
+    .col-xs-12.col-sm-8
+      .row.list-group
+        each location in locations
           .col-xs-12.list-group-item
             h4
               a(href="/location")= location.name
               small &nbsp;
                 +outputRating(location.rating)
-              span.badge.pull-right.badge-default 100m
-            p.address 125 High Street, Reading, RG6 1PS
+              span.badge.pull-right.badge-default= location.distance
+            p.address= location.address
             p
-              span.label.label-warning Hot drinks
-              | &nbsp;
-              span.label.label-warning Food
-              | &nbsp;
-              span.label.label-warning Premium wifi
-              | &nbsp;
+              each facility in location.facilities
+                span.label.label-warning= facility
+                | &nbsp;
     .col-xs-12.col-sm-4
       p.lead= sidebar
