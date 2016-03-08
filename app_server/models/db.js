@@ -4,6 +4,7 @@
 var mongoose = require ('mongoose');
 var dbURI = 'mongodb://localhost/Locatr';
 mongoose.connect(dbURI);
+require('./locations');
 
 mongoose.connection.on('connected', function(){
     console.log('Mongoose connected to ' + dbURI);
