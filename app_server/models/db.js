@@ -2,7 +2,7 @@
  * Created by kmjosephs on 3/6/16.
  */
 var mongoose = require ('mongoose');
-var dbURI = 'mongodb://localhost/Locatr';
+var dbURI = 'mongodb://localhost/Loc8tr';
 mongoose.connect(dbURI);
 require('./locations');
 
@@ -46,3 +46,4 @@ process.on('SIGTERM', function(){
         process.exit(0);
     });
 });
+
