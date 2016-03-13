@@ -2,7 +2,10 @@
  * Created by kmjosephs on 3/6/16.
  */
 var mongoose = require ('mongoose');
-var dbURI = 'mongodb://localhost/Loc8tr';
+var dbURI = 'mongodb://localhost/Loc8r';
+if (process.env.NODE_ENV === 'production'){
+    dbURI = process.env.MONGOLAB_URI;
+}
 mongoose.connect(dbURI);
 require('./locations');
 
